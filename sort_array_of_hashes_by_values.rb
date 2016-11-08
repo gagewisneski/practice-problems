@@ -7,10 +7,33 @@ pet_amounts = [
   {bird: 2}
 ]
 
-array = []
+pets = []
 
 pet_amounts.each do |inventory|
-  array << 
+  pets << inventory.keys
+  pets << inventory.values
+end
+
+puts pets
+
+length = pet_amounts.length - 1
+count = 1
+length.times do
+  length.times do
+    if pets[count].to_s.to_i >= pets[count + 2].to_s.to_i
+      pets[count - 1], pets[count], pets[count + 1], pets[count + 2] = pets[count + 1], pets[count + 2], pets[count - 1], pets[count]
+    end
+    count += 2
+  end
+  count = 0
+  length -= 1
+end
+
+# pets[0], pets[1], pets[2], pets[3] = pets[2], pets[3], pets[0], pets[1]
+
+puts "="*10
+
+puts pets
 
 # pet_amounts.each do |animal, amount|
 #   length = pet_amounts.length - 1
