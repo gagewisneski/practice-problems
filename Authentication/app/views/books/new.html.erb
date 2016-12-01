@@ -1,0 +1,8 @@
+<h1>Create a new Book</h1>
+
+<%= form_tag "/books/create", method: :post do %>
+  <%= text_field_tag :name, "Book Title" %>
+  <%= text_field_tag :author, "Book Author" %>
+  <%= text_field_tag :price, "Book Price" %>
+  <%= submit_tag "Save Book" %>
+<% end %>

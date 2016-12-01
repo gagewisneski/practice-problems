@@ -1,0 +1,10 @@
+<h1>Books Index</h1>
+
+<%= link_to "Create a Book", "/books/new" %>
+
+<% @books.each do |book| %>
+  <h3><%= link_to book.name, "books/#{book.id}" %></h3>
+  <h4>Author: <%= book.author %></h4>
+  <h4>Price: <%= number_to_currency(book.price) %></h4>
+  <h4>===========================</h4>
+<% end %>

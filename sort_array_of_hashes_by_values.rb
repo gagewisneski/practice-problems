@@ -17,21 +17,25 @@ end
 puts pets
 
 length = pet_amounts.length - 1
-count = 1
+count = 0
 length.times do
   length.times do
-    if pets[count].to_s.to_i >= pets[count + 2].to_s.to_i
-      pets[count - 1], pets[count], pets[count + 1], pets[count + 2] = pets[count + 1], pets[count + 2], pets[count - 1], pets[count]
+    if pets[count + 1].join.to_i > pets[count + 3].join.to_i
+      pets[count], pets[count + 2] = pets[count + 2], pets[count]
+      pets[count + 1], pets[count + 3] = pets[count + 3], pets[count + 1]
     end
     count += 2
+    p pets
+    puts "================"
   end
   count = 0
   length -= 1
 end
 
+
 # pets[0], pets[1], pets[2], pets[3] = pets[2], pets[3], pets[0], pets[1]
 
-puts "="*10
+
 
 puts pets
 

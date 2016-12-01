@@ -1,0 +1,10 @@
+<h1>This is the show page for: <%= @book.name %></h1>
+<h2>Author: <%= @book.author %></h2>
+<h2>Price: <%= number_to_currency(@book.price) %></h2>
+
+<br>
+<%= link_to "Edit: #{@book.name}", "/books/#{@book.id}/edit" %>
+<br>
+<%= link_to "Delete: #{@book.name}", "/books/#{@book.id}", method: :delete %>
+<br>
+<%= link_to "Index", "/books" %>
